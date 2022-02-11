@@ -4,7 +4,8 @@ console.log('***** Cart Functions *****');
 
 
 // - Create a global variable named `basket` and set it to an empty array.
-let basket = []; //makes basket
+let basket = []; //makes a basket
+const maxItems = 5;
 //
 // - Create a function called `addItem`. It should:
 //   - take an input parameter for a string `item`
@@ -23,33 +24,41 @@ console.log(basket); //should include 'banana' and 'avocado' and 'bacon' in that
 // - Create a function called `listItems`. It should:
 //   - loop over the items in the `basket` array
 //   - console.log each individual item on a new line
-function listItems(basket) {
-  for (let item of basket) {
-    console.log(basket[item]);
-  }
-}
-console.log(listItems([basket]));
-//
+
+// function listItems () {
+//   for (let i = 0; i < basket.length; i++) {
+//     console.log(basket[i]);
+//   }
+// } This code works, but I want to try something I saw on the old google machine:
+
+function listItems () {
+  basket.forEach((item) => {
+    console.log(item)
+  });
+} //This also works! Love that - the forEach method seems intuitive to me.
+console.log(listItems());
+console.log(basket); //checking the basket...
+
 // - Create a function called `empty`. It should:
 //   - reset the `basket` to an empty array
-//
-// > __IMPORTANT__
-// > Make sure that you are writing code *in the file* to test every function that you write!
-//
-// For example, to test `addItem`:
-// ```
-// console.log(`Basket is ${basket}`);
-// console.log('Adding apples (expect true)', addItem('apples'));
-// console.log(`Basket is now ${basket}`);
-// ```
-//
-// ### Stretch Goals
+function empty (basket) {
+  let basket = [];
+}
+console.log('The basket has: ', basket);
+console.log(addItem('chicken'));
+console.log('Checking new basket: ', basket);
+console.log(empty());
+console.log(basket);
+
+
+console.log('Ooo BIG Stretch');
 // Remember that Stretch Goals are not required, but will help you to further develop concepts from the skills we have covered.
 //
 // __Using functions in other functions!__
 //
 // 1. Add a global `const` named `maxItems` and set it to 5.
-//
+// Slapped that in at the top of the code. Seems like variables should be at the top if they aren't local?
+
 // 2. Create a function called isFull(). It should:
 //   - return `false` if the basket contains *less* than max number of items
 //   - return `true` otherwise (equal or more than maxItems)
