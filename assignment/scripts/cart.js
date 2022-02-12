@@ -15,7 +15,8 @@ function addItem ( item ) {
   console.log('in addItem') //will log if function is running
   basket.push( item );
   return true;
-}
+}// end addItem
+
 addItem('banana'); //adds banana
 addItem('avocado'); //adds avocado
 console.log(addItem('bacon')); //adds bacon and returns true
@@ -35,20 +36,23 @@ function listItems () {
   basket.forEach((item) => {
     console.log(item)
   });
-} //This also works! Love that - the forEach method seems intuitive to me.
+} //end listItems.
+//This also works! Love that - the forEach method seems intuitive to me.
+
 console.log(listItems());
 console.log(basket); //checking the basket...
 
 // - Create a function called `empty`. It should:
 //   - reset the `basket` to an empty array
-function empty (basket) {
-  let basket = [];
-}
+function empty () {
+  basket = [];
+  return true;
+}//end empty
 console.log('The basket has: ', basket);
 console.log(addItem('chicken'));
 console.log('Checking new basket: ', basket);
-console.log(empty());
-console.log(basket);
+console.log(empty()); //this logs true to the console, so we can know that the function ran successfully.
+console.log(basket); //array should now be empty!
 
 
 console.log('Ooo BIG Stretch');
