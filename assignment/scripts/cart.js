@@ -103,6 +103,8 @@ console.log('Ooo BIG Stretch');
 //   - If an item was added to the array, return `true`
 //   - If there was no room and the item could not be added return `false`
 
+//done
+
 // __Using Array built-in functions!__
 //
 // 4. Create a function called `removeItem`. It should:
